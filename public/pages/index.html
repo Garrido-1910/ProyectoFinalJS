@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Permiso</title>
+  <link rel="stylesheet" href="../styles/solicitud.css">
 </head>
 <body>
-    <h1>a</h1>
+  <h1>📋 Solicitud de Permiso de Computadora</h1>
+
+  <form id="formSolicitud">
+
+    <label for="idEstudiante">ID del Estudiante:</label>
+    <input type="text" id="idEstudiante" name="idEstudiante" readonly value="12345">
+
+    <label for="sede">Sede:</label>
+    <select id="sede" name="sede" required>
+      <option value="">-- Selecciona la sede --</option>
+      <option value="San José">San José</option>
+      <option value="Alajuela">Puntarenas</option>
+      <option value="Heredia">Virtual</option>
+    </select>
+
+    <label for="fechaSalida">Fecha de salida:</label>
+    <input type="date" id="fechaSalida" name="fechaSalida" required>
+
+    <label for="fechaRegreso">Fecha de regreso:</label>
+    <input type="date" id="fechaRegreso" name="fechaRegreso" required>
+
+    <label for="codigoEquipo">Código de la computadora:</label>
+    <input type="text" id="codigoEquipo" name="codigoEquipo" placeholder="Ej: PC-2025-01" required>
+    <div class="condiciones">
+
+      <input type="checkbox" id="condiciones" name="condiciones" required>
+      <label for="condiciones">Acepto las condiciones de uso del equipo</label>
+    </div>
+
+    <label for="firma">Firma digital:</label>
+    <input type="text" id="firma" name="firma" placeholder="Escribe tu firma aquí">
+
+    <button type="submit" id="btnEnviar">Enviar solicitud</button>
+  </form>
+
+  <script type="module" src="../js/solicitud.js"></script>
 </body>
 </html>
