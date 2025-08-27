@@ -1,3 +1,5 @@
+import { getData } from "../services/fetch.js";
+
 const registroconten = document.getElementById("container1");
 
 /* Función para mostrar mensajes al usuario */
@@ -23,7 +25,7 @@ function getUsers() {
 
 /* Evento click del botón de inicio de sesión */
 const btninicio = document.getElementById("btninicio");
-btninicio.addEventListener("click", function (e) {
+btninicio.addEventListener("click", async function (e) {
     e.preventDefault();
 
     const name = document.getElementById("username").value.trim();
@@ -34,11 +36,11 @@ btninicio.addEventListener("click", function (e) {
         return;
     }
 
-    const users = getUsers();
+    const users = await getData("usuarios")
 
     /* Permite iniciar sesión con usuario o correo y su contraseña */
     const user = users.find(u =>
-        (u.usuario.toLowerCase() === name.toLowerCase() || u.correo.toLowerCase() === name.toLowerCase()) &&
+        (u.nombre.toLowerCase() === name.toLowerCase() || u.correo.toLowerCase() === name.toLowerCase()) &&
         u.password === pass
     );
 
@@ -50,8 +52,8 @@ btninicio.addEventListener("click", function (e) {
     /* Guardar en localStorage el usuario */
     localStorage.setItem('currentUser', user.usuario);
 
-    showMessage("inicio de sesión exitoso", "success");
+    showMessage("inicio de sesion exitoso", "success");
     setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "solicitud.html";
     }, 1200);
 });

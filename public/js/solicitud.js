@@ -1,7 +1,7 @@
 
 window.addEventListener("DOMContentLoaded", () => {
   const usuarioDiv = document.querySelector(".usuario h1");
-  usuarioDiv.textContent = "Mi gallo";
+  usuarioDiv.textContent = "Mi gallo 🐓";
   alert("Bienvenido, por favor complete la solicitud de préstamo de computadora.");
 });
 
