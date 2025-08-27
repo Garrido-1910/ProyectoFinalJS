@@ -5,6 +5,7 @@ const password = document.getElementById("password");
 const confirmar = document.getElementById("confirmar");
 const btnregis = document.getElementById("button");
 const registroconten = document.getElementById("container2");
+const telefono = document.getElementById("Telefono");
 
 /* Mostrar mensajes al usuario */
 function showMessage(msg, type = "error") {
@@ -15,7 +16,6 @@ function showMessage(msg, type = "error") {
         msgDiv.style.margin = "10px 0";
         registroconten.insertBefore(msgDiv, registroconten.children[registroconten.children.length - 1]);
     }
-    // Aplica color según tipo
     msgDiv.style.color = type === "error" ? "red" : "green";
     msgDiv.innerText = msg;
 }
@@ -45,9 +45,10 @@ btnregis.addEventListener("click", function (e) {
     const usuarioVal = usuario.value.trim();
     const passwordVal = password.value;
     const confirmarVal = confirmar.value;
+    const telefonoVal = telefono.value.trim();
 
     /* Validar que los campos existen y tienen valor */
-    if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal) {
+    if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal || !telefonoVal) {
         showMessage("Todos los campos son obligatorios.");
         return;
     }
@@ -83,7 +84,8 @@ btnregis.addEventListener("click", function (e) {
         nombre: nombreVal,
         correo: correoVal,
         usuario: usuarioVal,
-        password: passwordVal
+        password: passwordVal,
+        telefono: telefonoVal 
     });
     saveUsers(users);
 
@@ -94,6 +96,7 @@ btnregis.addEventListener("click", function (e) {
     usuario.value = "";
     password.value = "";
     confirmar.value = "";
+    telefono.value = "";
 
     /* Redirigir automático */
     setTimeout(() => {
