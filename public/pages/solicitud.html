@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Permiso</title>
+
+  <link rel="stylesheet" href="../styles/solicitud.css">
+</head>
+
+<body>
+  <h1>📋 Solicitud de Permiso de Computadora</h1>
+
+  <div class="usuario">
+    <h1>HOLA XD</h1>
+  </div>
+
+  <form id="formSolicitud">
+    <div>
+      <label for="idEstudiante">ID del Estudiante:</label>
+      <input type="text" id="idEstudiante" name="idEstudiante" readonly value="12345">
+    </div>
+
+    <div>
+      <label for="sede">Sede:</label>
+      <select id="sede" name="sede" required>
+        <option value="">-- Selecciona la sede --</option>
+        <option value="San José">San José</option>
+        <option value="Puntarenas">Puntarenas</option>
+        <option value="Virtual">Virtual</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="fechaSalida">Fecha de salida:</label>
+      <input type="date" id="fechaSalida" name="fechaSalida" required>
+
+      <label for="fechaRegreso">Fecha de regreso:</label>
+      <input type="date" id="fechaRegreso" name="fechaRegreso" required>
+    </div>
+
+    <div>
+      <label for="codigoEquipo">Código de la computadora:</label>
+      <input type="text" id="codigoEquipo" name="codigoEquipo" placeholder="Ej: PC-2025-01" pattern="PC-\d{4}-\d{2}"
+        required>
+    </div>
+
+    <div class="condiciones">
+      <input type="checkbox" id="condiciones" name="condiciones" required>
+      <label for="condiciones">Acepto las condiciones de uso del equipo</label>
+    </div class="terminos">
+    <ul>
+      <li> Si viajas en transporte público, debes resguardar tu equipo en tu bolso
+        personal, no exponerlo.</li>
+      <li> Si llevas el equipo, procura ir acompañado.</li>
+      <li> Si está lloviendo, procura llevar el equipo en un vehículo apropiado para
+        evitar algún daño.</li>
+      <li> Evitar jugar, descargar o utilizar el equipo para otros motivos que no sean
+        relacionados con el estudio.</li>
+      <li> El equipo será revisado antes y después de ser entregado. Cualquier
+        alteración o instalación indebida podría resultar en la pérdida de privilegios.</li>
+      <li> Si retiras una computadora sin haber completado el formulario y la boleta
+        física, podrías ser amonestado.</li>
+      <li> Este formulario debe llenarse junto con la boleta física, que debe estar
+        firmada por la persona encargada.</li>
+    </ul>
+    <div>
+      <label for="firma">Firma digital:</label>
+      <input type="text" id="firma" name="firma" placeholder="Escribe tu firma aquí" required>
+    </div>
+
+    <button type="submit" id="btnEnviar">Enviar solicitud</button>
+  </form>
+
+  <div class="info">
+    <h2>Sistema de permisos para uso de computadoras académicas</h2>
+    <p>Por favor complete todos los campos para solicitar el préstamo de equipo.</p>
+  </div>
+
+  <script type="module" src="../js/solicitud.js"></script>
+</body>
+
+</html>
