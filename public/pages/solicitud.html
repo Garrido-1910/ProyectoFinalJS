@@ -45,27 +45,25 @@
       <input type="text" id="codigoEquipo" name="codigoEquipo" placeholder="Ej: PC-2025-01" pattern="PC-\d{4}-\d{2}"
         required>
     </div>
+<div class="condiciones">
+  <input type="checkbox" id="condiciones" name="condiciones" required>
+  <label for="condiciones">Acepto las condiciones de uso del equipo</label>
+</div>
 
-    <div class="condiciones">
-      <input type="checkbox" id="condiciones" name="condiciones" required>
-      <label for="condiciones">Acepto las condiciones de uso del equipo</label>
-    </div class="terminos">
-    <ul>
-      <li> Si viajas en transporte público, debes resguardar tu equipo en tu bolso
-        personal, no exponerlo.</li>
-      <li> Si llevas el equipo, procura ir acompañado.</li>
-      <li> Si está lloviendo, procura llevar el equipo en un vehículo apropiado para
-        evitar algún daño.</li>
-      <li> Evitar jugar, descargar o utilizar el equipo para otros motivos que no sean
-        relacionados con el estudio.</li>
-      <li> El equipo será revisado antes y después de ser entregado. Cualquier
-        alteración o instalación indebida podría resultar en la pérdida de privilegios.</li>
-      <li> Si retiras una computadora sin haber completado el formulario y la boleta
-        física, podrías ser amonestado.</li>
-      <li> Este formulario debe llenarse junto con la boleta física, que debe estar
-        firmada por la persona encargada.</li>
-    </ul>
-    <div>
+<button type="button" id="toggleTerminos">📑 Ver términos y condiciones</button>
+
+<div class="terminos oculto">
+  <ul>
+    <li>Si viajas en transporte público, debes resguardar tu equipo en tu bolso personal, no exponerlo.</li>
+    <li>Si llevas el equipo, procura ir acompañado.</li>
+    <li>Si está lloviendo, procura llevar el equipo en un vehículo apropiado para evitar algún daño.</li>
+    <li>Evitar jugar, descargar o utilizar el equipo para otros motivos que no sean relacionados con el estudio.</li>
+    <li>El equipo será revisado antes y después de ser entregado. Cualquier alteración o instalación indebida podría resultar en la pérdida de privilegios.</li>
+    <li>Si retiras una computadora sin haber completado el formulario y la boleta física, podrías ser amonestado.</li>
+    <li>Este formulario debe llenarse junto con la boleta física, que debe estar firmada por la persona encargada.</li>
+  </ul>
+</div>
+
       <label for="firma">Firma digital:</label>
       <input type="text" id="firma" name="firma" placeholder="Escribe tu firma aquí" required>
     </div>

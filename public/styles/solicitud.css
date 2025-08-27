@@ -1,4 +1,4 @@
-/* ====== Estilos generales ====== */
+
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f9;
@@ -11,7 +11,7 @@ h1 {
   color: #2c3e50;
 }
 
-/* ====== Caja de usuario ====== */
+
 .usuario {
   max-width: 600px;
   margin: 20px auto;
@@ -25,7 +25,7 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ====== Formulario ====== */
+
 form {
   max-width: 650px;
   margin: auto;
@@ -52,14 +52,14 @@ button {
   font-size: 14px;
 }
 
-/* Efectos en focus */
+
 input:focus,
 select:focus {
   border-color: #3498db;
   outline: none;
 }
 
-/* ====== Condiciones ====== */
+
 .condiciones {
   display: flex;
   align-items: center;
@@ -67,7 +67,6 @@ select:focus {
   margin-top: 15px;
 }
 
-/* ====== Lista de términos ====== */
 .terminos,
 ul {
   margin-top: 15px;
@@ -81,7 +80,7 @@ ul li {
   line-height: 1.5;
 }
 
-/* ====== Botón ====== */
+
 button {
   background: #3498db;
   color: white;
@@ -96,10 +95,33 @@ button:hover {
   background: #2980b9;
 }
 
-/* ====== Información final ====== */
+
 .info {
   margin-top: 30px;
   text-align: center;
   font-size: 14px;
   color: #555;
 }
+.oculto {
+  display: none;
+}
+
+.terminos {
+  margin-top: 15px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid #3498db;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.terminos ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.terminos li {
+  margin-bottom: 8px;
+}
+

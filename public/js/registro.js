@@ -1,3 +1,4 @@
+import { postData } from "../services/fetch.js";
 const nombre = document.getElementById("nombre");
 const correo = document.getElementById("correo");
 const usuario = document.getElementById("usuario");
@@ -36,7 +37,7 @@ function saveUsers(users) {
 }
 
 /* Evento click del botón de registro */
-btnregis.addEventListener("click", function (e) {
+btnregis.addEventListener("click", async function (e) {
     e.preventDefault();
 
     /* Elimina espacios extra en los valores */
@@ -80,6 +81,25 @@ btnregis.addEventListener("click", function (e) {
     }
 
     /* Guardar el nuevo usuario */
+const usu = {
+    nombre: nombre.value.trim(),
+    correo: correo.value.trim(),
+    usuario: usuario.value.trim(),
+    password: password.value,
+    telefono: telefono.value.trim()
+};
+
+const respuesta = await postData(usu, "usuarios");
+console.log("Servidor respondió:", respuesta);
+    /* 
+        Crear un objeto que se llame usuario
+
+        El obj va a tener las propiedades y valores de cada uno de los usuarios
+
+        Luego crear una variable  que haga uso de la funcion postData, por 
+        parametro pasarle - El nombre del endpoint y el objeto
+    */
+
     users.push({
         nombre: nombreVal,
         correo: correoVal,
