@@ -50,8 +50,8 @@ btninicio.addEventListener("click", function (e) {
     /* Guardar en localStorage el usuario */
     localStorage.setItem('currentUser', user.usuario);
 
-    showMessage("inicio de sesión exitoso", "success");
+    showMessage("inicio de sesion exitoso", "success");
     setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "solicitud.html";
     }, 1200);
 });

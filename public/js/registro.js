@@ -49,33 +49,33 @@ btnregis.addEventListener("click", function (e) {
 
     /* Validar que los campos existen y tienen valor */
     if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal || !telefonoVal) {
-        showMessage("Todos los campos son obligatorios.");
+        showMessage("Todos los campos son obligatorios");
         return;
     }
 
     if (!validateEmail(correoVal)) {
-        showMessage("El correo no es válido.");
+        showMessage("El correo no es valido");
         return;
     }
 
     if (passwordVal.length < 6) {
-        showMessage("La contraseña debe tener al menos 6 caracteres.");
+        showMessage("La contraseña debe tener al menos 6 caracteres");
         return;
     }
 
     if (passwordVal !== confirmarVal) {
-        showMessage("Las contraseñas no coinciden.");
+        showMessage("Las contraseñas no coinciden");
         return;
     }
 
     const users = getUsers();
 
     if (users.some(u => u.usuario.toLowerCase() === usuarioVal.toLowerCase())) {
-        showMessage("El nombre de usuario ya existe.");
+        showMessage("El nombre de usuario ya existe");
         return;
     }
     if (users.some(u => u.correo.toLowerCase() === correoVal.toLowerCase())) {
-        showMessage("El correo ya está registrado.");
+        showMessage("El correo ya está registrado");
         return;
     }
 
@@ -89,7 +89,7 @@ btnregis.addEventListener("click", function (e) {
     });
     saveUsers(users);
 
-    showMessage("¡Registro exitoso! Ahora puedes iniciar sesión.", "success");
+    showMessage("Puedes iniciar sesion.", "success");
 
     nombre.value = "";
     correo.value = "";
