@@ -9,7 +9,6 @@ const confirmar = document.getElementById("confirmar");
 const btnregis = document.getElementById("button");
 const registroconten = document.getElementById("container2");
 const telefono = document.getElementById("Telefono");
-
 function showMessage(msg, type = "error") {
     let msgDiv = document.getElementById("msg");
     if (!msgDiv) {
@@ -21,19 +20,15 @@ function showMessage(msg, type = "error") {
     msgDiv.style.color = type === "error" ? "red" : "green";
     msgDiv.innerText = msg;
 }
-
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
-
 function getUsers() {
     return JSON.parse(localStorage.getItem("users") || "[]");
 }
-
 function saveUsers(users) {
     localStorage.setItem("users", JSON.stringify(users));
 }
-
 btnregis?.addEventListener("click", async e => {
     e.preventDefault();
     const nombreVal = nombre?.value.trim();

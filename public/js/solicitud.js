@@ -59,8 +59,8 @@ form.addEventListener("submit",async (e) => {
   const solicitud={
       idEstudiante: idEstudiante,
       sede:sede,
-      fechaSalida: fechaSalida.toISOString(),
-      fechaRegreso: fechaRegreso.toISOString(),
+      fechaSalida: fechaSalida.toISOString(), 
+      fechaRegreso: fechaRegreso.toISOString(), 
       codigoEquipo:codigoEquipo,
       firma: firma
   }
@@ -73,16 +73,7 @@ const ocultar = document.getElementById("ocultar")
 btnTerminos.addEventListener("click", () => {
   terminos.classList.toggle("oculto");
   btnTerminos.textContent = terminos.classList.contains("oculto")
-  ? " Ver términos y condiciones"
-    : " Ocultar términos y condiciones";
-  btnTerminos.textContent == "Ver términos y condiciones"  ? ocultar.style.display = "none" : ocultar.style.display = "block"
+  ? "📑 Ver términos y condiciones" 
+    : "❌ Ocultar términos y condiciones";
+  btnTerminos.textContent == "📑 Ver términos y condiciones"  ? ocultar.style.display = "none" : ocultar.style.display = "block"
 });
-
-
-
-
-
-
-
-
-

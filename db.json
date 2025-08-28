@@ -17,24 +17,6 @@
       "password": "123456789",
       "telefono": "123456",
       "tipoUsuario": "estudiante"
-    },
-    {
-      "id": "1ef7",
-      "nombre": "qqqq",
-      "correo": "ala@gmail.com",
-      "usuario": "ala@gmail.com",
-      "password": "123456789",
-      "telefono": "1234567",
-      "tipoUsuario": "estudiante"
-    },
-    {
-      "id": "8078",
-      "nombre": "pedro",
-      "correo": "pedro@gmail.com",
-      "usuario": "cg",
-      "password": "123456789",
-      "telefono": "123456",
-      "tipoUsuario": "estudiante"
     }
   ],
   "solicitudes": [
@@ -46,6 +28,24 @@
       "fechaRegreso": "2025-08-29T00:00:00.000Z",
       "codigoEquipo": "PC-2025-03",
       "firma": true
+    },
+    {
+      "id": "2cdf",
+      "idEstudiante": "12345",
+      "sede": "Puntarenas",
+      "fechaSalida": "2025-08-12T00:00:00.000Z",
+      "fechaRegreso": "2025-08-28T00:00:00.000Z",
+      "codigoEquipo": "PC-2025-01",
+      "firma": "11"
+    },
+    {
+      "id": "f01b",
+      "idEstudiante": "12345",
+      "sede": "San José",
+      "fechaSalida": "2025-08-13T00:00:00.000Z",
+      "fechaRegreso": "2025-08-28T00:00:00.000Z",
+      "codigoEquipo": "PC-2025-01",
+      "firma": "11"
     }
   ]
 }
