@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Historial de Solicitudes</title>
+</head>
+<body>
+  <h3>Filtrar Solicitudes</h3>
+  <label>Estudiante: <input id="filtronombre" type="text"></label>
+  <label>Fecha Salida: <input id="filtrofecha" type="date"></label>
+  <label>
+<p>Estado:</p>
+    <select id="filtroestado">
+      <option value="">Todos</option>
+      <option value="pendiente">Pendiente</option>
+      <option value="aprobada">Aprobada</option>
+      <option value="rechazada">Rechazada</option>
+    </select>
+  </label>
+  <hr>
+  <div id="resultado"></div>
+
+  <script type="module" src="../js/historial.js"></script>
+</body>
+</html>
