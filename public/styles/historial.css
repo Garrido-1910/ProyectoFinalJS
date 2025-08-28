@@ -1,0 +1,38 @@
+/* Estilos para historial.html */
+.historial-main {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px #0001;
+}
+.historial-title {
+  color: #1f3c88;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.historial-filtros {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+}
+#resultado {
+  margin-top: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 10px;
+  text-align: left;
+}
+th {
+  background: #f5f7fa;
+}

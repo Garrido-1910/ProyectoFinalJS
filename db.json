@@ -6,7 +6,17 @@
       "correo": "b@gmail.com",
       "usuario": "c",
       "password": "123456",
-      "telefono": "f"
+      "telefono": "f",
+      "tipoUsuario": "profesor"
+    },
+    {
+      "id": "d427",
+      "nombre": "estuidante",
+      "correo": "aña@gmail.com",
+      "usuario": "pepe",
+      "password": "123456789",
+      "telefono": "123456",
+      "tipoUsuario": "estudiante"
     }
   ]
 }

@@ -2,24 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historial de Solicitudes</title>
+  <link rel="stylesheet" href="../styles/historial.css">
 </head>
 <body>
-  <h3>Filtrar Solicitudes</h3>
-  <label>Estudiante: <input id="filtronombre" type="text"></label>
-  <label>Fecha Salida: <input id="filtrofecha" type="date"></label>
-  <label>
-<p>Estado:</p>
-    <select id="filtroestado">
-      <option value="">Todos</option>
-      <option value="pendiente">Pendiente</option>
-      <option value="aprobada">Aprobada</option>
-      <option value="rechazada">Rechazada</option>
-    </select>
-  </label>
-  <hr>
-  <div id="resultado"></div>
-
+  <main class="historial-main">
+    <h2 class="historial-title">Historial de Solicitudes</h2>
+    <section class="historial-filtros">
+      <label>Estudiante:<br><input id="filtronombre" type="text"></label>
+      <label>Fecha Salida:<br><input id="filtrofecha" type="date"></label>
+      <label>Estado:<br>
+        <select id="filtroestado">
+          <option value="">Todos</option>
+          <option value="pendiente">Pendiente</option>
+          <option value="aprobada">Aprobada</option>
+          <option value="rechazada">Rechazada</option>
+        </select>
+      </label>
+    </section>
+    <hr>
+    <div id="resultado"></div>
+  </main>
   <script type="module" src="../js/historial.js"></script>
 </body>
 </html>

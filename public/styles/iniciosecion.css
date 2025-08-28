@@ -1,3 +1,9 @@
+ .disabled-link {
+  pointer-events: none;
+  opacity: 0.5;
+  color: #888 !important;
+  cursor: default;
+}
 body {
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: linear-gradient(135deg, #eef2f7, #d9e4f5);

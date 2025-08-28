@@ -2,14 +2,25 @@
 window.addEventListener("DOMContentLoaded", () => {
   const usuarioDiv = document.querySelector(".usuario h1");
   usuarioDiv.textContent = "Mi gallo 🐓";
-  alert("Bienvenido, por favor complete la solicitud de préstamo de computadora.");
+  mostrarMensaje("Bienvenido, por favor complete la solicitud de préstamo de computadora.", "info");
 });
 
 const form = document.getElementById("formSolicitud");
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault(); 
+function mostrarMensaje(msg, type = "error") {
+  let msgDiv = document.getElementById("msg");
+  if (!msgDiv) {
+    msgDiv = document.createElement("div");
+    msgDiv.id = "msg";
+    form.parentNode.insertBefore(msgDiv, form);
+  }
+  msgDiv.innerText = msg;
+  msgDiv.style.color = type === "error" ? "red" : type === "success" ? "green" : "#333";
+  msgDiv.style.margin = "10px 0";
+}
 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
   const idEstudiante = document.getElementById("idEstudiante").value.trim();
   const sede = document.getElementById("sede").value;
   const fechaSalida = new Date(document.getElementById("fechaSalida").value);
@@ -19,53 +30,44 @@ form.addEventListener("submit", (e) => {
   const firma = document.getElementById("firma").value.trim();
 
   if (!idEstudiante) {
-    alert("⚠️ El ID del estudiante es obligatorio.");
+    mostrarMensaje("El ID del estudiante es obligatorio.");
     return;
   }
-
   if (!sede) {
-    alert("⚠️ Debes seleccionar una sede.");
+    mostrarMensaje("Debes seleccionar una sede.");
     return;
   }
-
   if (!fechaSalida || !fechaRegreso) {
-    alert("⚠️ Debes seleccionar ambas fechas.");
+    mostrarMensaje("Debes seleccionar ambas fechas.");
     return;
   }
-
   if (fechaRegreso < fechaSalida) {
-    alert("⚠️ La fecha de regreso no puede ser anterior a la de salida.");
+    mostrarMensaje("La fecha de regreso no puede ser anterior a la de salida.");
     return;
   }
-
   if (!/^PC-\d{4}-\d{2}$/.test(codigoEquipo)) {
-    alert("⚠️ El código del equipo debe tener el formato PC-YYYY-NN (ej: PC-2025-01).");
+    mostrarMensaje("El código del equipo debe tener el formato PC-YYYY-NN (ej: PC-2025-01).");
     return;
   }
-
   if (!condiciones) {
-    alert("⚠️ Debes aceptar las condiciones de uso.");
+    mostrarMensaje("Debes aceptar las condiciones de uso.");
     return;
   }
-
   if (!firma) {
-    alert("⚠️ Debes ingresar tu firma digital.");
+    mostrarMensaje("Debes ingresar tu firma digital.");
     return;
   }
-
-  alert("✅ Solicitud enviada con éxito.");
-  form.reset(); 
+  mostrarMensaje("Solicitud enviada con éxito.", "success");
+  form.reset();
 });
 
 const btnTerminos = document.getElementById("toggleTerminos");
 const terminos = document.querySelector(".terminos");
-
+const ocultar = document.getElementById("ocultar")
 btnTerminos.addEventListener("click", () => {
   terminos.classList.toggle("oculto");
-
-  if (terminos.classList.contains("oculto")) {
-    btnTerminos.textContent = "📑 Ver términos y condiciones";
-  } else {
-    btnTerminos.textContent = "❌ Ocultar términos y condiciones";
-  }
+  btnTerminos.textContent = terminos.classList.contains("oculto")
+  ? "📑 Ver términos y condiciones" 
+    : "❌ Ocultar términos y condiciones";
+  btnTerminos.textContent == "📑 Ver términos y condiciones"  ? ocultar.style.display = "none" : ocultar.style.display = "block"
 });
