@@ -45,6 +45,7 @@ btninicio.addEventListener("click", async e => {
     if (current?.tipoUsuario === "estudiante") {
         localStorage.setItem("currentUser", current.usuario);
         showMessage("Inicio de sesión exitoso", "success");
+        localStorage.setItem("nombre",current.nombre)
         setTimeout(() => {
             window.location.href = "/pages/solicitud.html";
         }, 1000);

@@ -1,7 +1,8 @@
+import { postData } from "../services/fetch.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   const usuarioDiv = document.querySelector(".usuario h1");
-  usuarioDiv.textContent = "Mi gallo 🐓";
+  usuarioDiv.textContent = localStorage.getItem("currentUser");
   mostrarMensaje("Bienvenido, por favor complete la solicitud de préstamo de computadora.", "info");
 });
 
@@ -19,7 +20,7 @@ function mostrarMensaje(msg, type = "error") {
   msgDiv.style.margin = "10px 0";
 }
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit",async (e) => {
   e.preventDefault();
   const idEstudiante = document.getElementById("idEstudiante").value.trim();
   const sede = document.getElementById("sede").value;
@@ -59,8 +60,17 @@ form.addEventListener("submit", (e) => {
   }
   mostrarMensaje("Solicitud enviada con éxito.", "success");
   form.reset();
+  const solicitud={
+      idEstudiante: idEstudiante,
+      sede:sede,
+      fechaSalida:fechaSalida,
+      fechaRegreso:fechaRegreso,
+      codigoEquipo:codigoEquipo,
+      firma: firma != null ? true : false
+  }
+  const peticion = await postData(solicitud,"solicitudes")
+  console.log(peticion)
 });
-
 const btnTerminos = document.getElementById("toggleTerminos");
 const terminos = document.querySelector(".terminos");
 const ocultar = document.getElementById("ocultar")
