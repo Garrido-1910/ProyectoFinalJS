@@ -63,10 +63,10 @@ form.addEventListener("submit",async (e) => {
   const solicitud={
       idEstudiante: idEstudiante,
       sede:sede,
-      fechaSalida:fechaSalida,
-      fechaRegreso:fechaRegreso,
+      fechaSalida: fechaSalida.toISOString(), 
+      fechaRegreso: fechaRegreso.toISOString(), 
       codigoEquipo:codigoEquipo,
-      firma: firma != null ? true : false
+      firma: firma
   }
   const peticion = await postData(solicitud,"solicitudes")
   console.log(peticion)

@@ -7,7 +7,6 @@ const confirmar = document.getElementById("confirmar");
 const btnregis = document.getElementById("button");
 const registroconten = document.getElementById("container2");
 const telefono = document.getElementById("Telefono");
-
 function showMessage(msg, type = "error") {
     let msgDiv = document.getElementById("msg");
     if (!msgDiv) {
@@ -19,27 +18,23 @@ function showMessage(msg, type = "error") {
     msgDiv.style.color = type === "error" ? "red" : "green";
     msgDiv.innerText = msg;
 }
-
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
-
 function getUsers() {
     return JSON.parse(localStorage.getItem("users") || "[]");
 }
-
 function saveUsers(users) {
     localStorage.setItem("users", JSON.stringify(users));
 }
-
-btnregis.addEventListener("click", async e => {
+btnregis?.addEventListener("click", async e => {
     e.preventDefault();
-    const nombreVal = nombre.value.trim();
-    const correoVal = correo.value.trim();
-    const usuarioVal = usuario.value.trim();
-    const passwordVal = password.value;
-    const confirmarVal = confirmar.value;
-    const telefonoVal = telefono.value.trim();
+    const nombreVal = nombre?.value.trim();
+    const correoVal = correo?.value.trim();
+    const usuarioVal = usuario?.value.trim();
+    const passwordVal = password?.value;
+    const confirmarVal = confirmar?.value;
+    const telefonoVal = telefono?.value.trim();
     if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal || !telefonoVal) {
         showMessage("Todos los campos son obligatorios");
         return;
@@ -73,15 +68,20 @@ btnregis.addEventListener("click", async e => {
         telefono: telefonoVal,
         tipoUsuario: "estudiante"
     };
-    const respuesta = await postData(usu, "usuarios");
-    console.log("Servidor respondió:", respuesta);
+    let respuesta;
+    try {
+        respuesta = await postData(usu, "usuarios");
+    } catch {
+        showMessage("Error al registrar usuario");
+        return;
+    }
     users.push(usu);
     saveUsers(users);
     showMessage("Puedes iniciar sesión.", "success");
-    nombre.value = "";
-    correo.value = "";
-    usuario.value = "";
-    password.value = "";
-    confirmar.value = "";
-    telefono.value = "";
+    if(nombre) nombre.value = "";
+    if(correo) correo.value = "";
+    if(usuario) usuario.value = "";
+    if(password) password.value = "";
+    if(confirmar) confirmar.value = "";
+    if(telefono) telefono.value = "";
 });
