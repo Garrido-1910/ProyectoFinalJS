@@ -1,4 +1,6 @@
+
 import { postData } from "../services/fetch.js";
+
 const nombre = document.getElementById("nombre");
 const correo = document.getElementById("correo");
 const usuario = document.getElementById("usuario");
@@ -32,14 +34,14 @@ function saveUsers(users) {
     localStorage.setItem("users", JSON.stringify(users));
 }
 
-btnregis.addEventListener("click", async e => {
+btnregis?.addEventListener("click", async e => {
     e.preventDefault();
-    const nombreVal = nombre.value.trim();
-    const correoVal = correo.value.trim();
-    const usuarioVal = usuario.value.trim();
-    const passwordVal = password.value;
-    const confirmarVal = confirmar.value;
-    const telefonoVal = telefono.value.trim();
+    const nombreVal = nombre?.value.trim();
+    const correoVal = correo?.value.trim();
+    const usuarioVal = usuario?.value.trim();
+    const passwordVal = password?.value;
+    const confirmarVal = confirmar?.value;
+    const telefonoVal = telefono?.value.trim();
     if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal || !telefonoVal) {
         showMessage("Todos los campos son obligatorios");
         return;
@@ -73,15 +75,20 @@ btnregis.addEventListener("click", async e => {
         telefono: telefonoVal,
         tipoUsuario: "estudiante"
     };
-    const respuesta = await postData(usu, "usuarios");
-    console.log("Servidor respondió:", respuesta);
+    let respuesta;
+    try {
+        respuesta = await postData(usu, "usuarios");
+    } catch {
+        showMessage("Error al registrar usuario");
+        return;
+    }
     users.push(usu);
     saveUsers(users);
     showMessage("Puedes iniciar sesión.", "success");
-    nombre.value = "";
-    correo.value = "";
-    usuario.value = "";
-    password.value = "";
-    confirmar.value = "";
-    telefono.value = "";
+    if(nombre) nombre.value = "";
+    if(correo) correo.value = "";
+    if(usuario) usuario.value = "";
+    if(password) password.value = "";
+    if(confirmar) confirmar.value = "";
+    if(telefono) telefono.value = "";
 });
