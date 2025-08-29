@@ -81,7 +81,9 @@
       "fechaSalida": "2025-08-28T00:00:00.000Z",
       "fechaRegreso": "2025-08-29T00:00:00.000Z",
       "codigoEquipo": "PC-2025-03",
-      "firma": true
+      "firma": true,
+      "devuelta": true,
+      "estado": "devuelta"
     },
     {
       "id": "2cdf",
