@@ -1,4 +1,6 @@
+
 import { postData } from "../services/fetch.js";
+
 const nombre = document.getElementById("nombre");
 const correo = document.getElementById("correo");
 const usuario = document.getElementById("usuario");
@@ -31,11 +33,10 @@ btnregis?.addEventListener("click", async e => {
     e.preventDefault();
     const nombreVal = nombre?.value.trim();
     const correoVal = correo?.value.trim();
-    const usuarioVal = usuario?.value.trim();
     const passwordVal = password?.value;
     const confirmarVal = confirmar?.value;
     const telefonoVal = telefono?.value.trim();
-    if (!nombreVal || !correoVal || !usuarioVal || !passwordVal || !confirmarVal || !telefonoVal) {
+    if (!nombreVal || !correoVal || !passwordVal || !confirmarVal || !telefonoVal) {
         showMessage("Todos los campos son obligatorios");
         return;
     }
@@ -52,18 +53,16 @@ btnregis?.addEventListener("click", async e => {
         return;
     }
     const users = getUsers();
-    if (users.some(u => u.usuario.toLowerCase() === usuarioVal.toLowerCase())) {
-        showMessage("El nombre de usuario ya existe");
-        return;
-    }
     if (users.some(u => u.correo.toLowerCase() === correoVal.toLowerCase())) {
         showMessage("El correo ya está registrado");
         return;
     }
+    const usuario_iniciales = nombreVal.split(" ")
+    const iniciales = usuario_iniciales.map((inicial) => inicial[0].toLocaleUpperCase()).join("")
     const usu = {
         nombre: nombreVal,
         correo: correoVal,
-        usuario: usuarioVal,
+        usuario: iniciales,
         password: passwordVal,
         telefono: telefonoVal,
         tipoUsuario: "estudiante"
@@ -78,10 +77,11 @@ btnregis?.addEventListener("click", async e => {
     users.push(usu);
     saveUsers(users);
     showMessage("Puedes iniciar sesión.", "success");
-    if(nombre) nombre.value = "";
-    if(correo) correo.value = "";
-    if(usuario) usuario.value = "";
-    if(password) password.value = "";
-    if(confirmar) confirmar.value = "";
-    if(telefono) telefono.value = "";
+    window.location.href = "../pages/iniciosecion.html"
+    if (nombre) nombre.value = "";
+    if (correo) correo.value = "";
+    if (usuario) usuario.value = "";
+    if (password) password.value = "";
+    if (confirmar) confirmar.value = "";
+    if (telefono) telefono.value = "";
 });

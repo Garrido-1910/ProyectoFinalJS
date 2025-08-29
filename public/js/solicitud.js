@@ -1,13 +1,19 @@
+
 import { postData } from "../services/fetch.js";
+
+
+const usuario_iniciales = localStorage.getItem("nombre").split(" ")
+const iniciales = usuario_iniciales.map((inicial)=> inicial[0].toLocaleUpperCase()).join(" ")
+const idEstudiante = document.getElementById("idEstudiante").value = iniciales;
+
+
 
 window.addEventListener("DOMContentLoaded", () => {
   const usuarioDiv = document.querySelector(".usuario h1");
   usuarioDiv.textContent = localStorage.getItem("currentUser");
   mostrarMensaje("Bienvenido, por favor complete la solicitud de préstamo de computadora.", "info");
 });
-
 const form = document.getElementById("formSolicitud");
-
 function mostrarMensaje(msg, type = "error") {
   let msgDiv = document.getElementById("msg");
   if (!msgDiv) {
@@ -19,17 +25,14 @@ function mostrarMensaje(msg, type = "error") {
   msgDiv.style.color = type === "error" ? "red" : type === "success" ? "green" : "#333";
   msgDiv.style.margin = "10px 0";
 }
-
 form.addEventListener("submit",async (e) => {
   e.preventDefault();
-  const idEstudiante = document.getElementById("idEstudiante").value.trim();
   const sede = document.getElementById("sede").value;
   const fechaSalida = new Date(document.getElementById("fechaSalida").value);
   const fechaRegreso = new Date(document.getElementById("fechaRegreso").value);
   const codigoEquipo = document.getElementById("codigoEquipo").value.trim();
   const condiciones = document.getElementById("condiciones").checked;
   const firma = document.getElementById("firma").value.trim();
-
   if (!idEstudiante) {
     mostrarMensaje("El ID del estudiante es obligatorio.");
     return;

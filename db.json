@@ -11,11 +11,65 @@
     },
     {
       "id": "d427",
-      "nombre": "estuidante",
+      "nombre": "Christopher Alberto Garrido Sanchez",
       "correo": "aña@gmail.com",
       "usuario": "pepe",
       "password": "123456789",
       "telefono": "123456",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "8b03",
+      "nombre": "Pepe Gonzalez Indu Caleb",
+      "correo": "pepe@viyuela.com",
+      "usuario": "P G I C",
+      "password": "123456",
+      "telefono": "911",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "bb9e",
+      "nombre": "Cristiano Ronaldo Dos Santos Aveiro",
+      "correo": "elbicho@07.com",
+      "usuario": "CRDSA",
+      "password": "123456",
+      "telefono": "07",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "2b5c",
+      "nombre": "AB",
+      "correo": "AB@gmail.com",
+      "usuario": "A",
+      "password": "123456",
+      "telefono": "911",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "aa06",
+      "nombre": "AB",
+      "correo": "ABC@gmail.com",
+      "usuario": "A",
+      "password": "123456",
+      "telefono": "911",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "b6cf",
+      "nombre": "AB",
+      "correo": "ABCD@gmail.com",
+      "usuario": "A",
+      "password": "123456",
+      "telefono": "911",
+      "tipoUsuario": "estudiante"
+    },
+    {
+      "id": "7bb2",
+      "nombre": "Antonio Josue Hernandez Perez",
+      "correo": "antonio@gmail.com",
+      "usuario": "AJHP",
+      "password": "123456",
+      "telefono": "911",
       "tipoUsuario": "estudiante"
     }
   ],

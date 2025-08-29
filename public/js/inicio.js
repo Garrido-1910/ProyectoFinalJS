@@ -1,3 +1,4 @@
+
 import { getData } from "../services/fetch.js";
 
 const registroconten = document.getElementById("container1");
@@ -13,22 +14,21 @@ function showMessage(msg, type = "error") {
     msgDiv.className = type;
 }
 
-
-const btninicio = document.getElementById("btninicio");
-btninicio.addEventListener("click", async e => {
+document.getElementById("btninicio")?.addEventListener("click", async e => {
     e.preventDefault();
-
-    const name = document.getElementById("username").value.trim();
-    const pass = document.getElementById("password").value;
-
+    const name = document.getElementById("username")?.value.trim();
+    const pass = document.getElementById("password")?.value;
     if (!name || !pass) {
         showMessage("Completa todos los campos");
         return;
     }
-
-
-    const users = await getData("usuarios");
-    console.log("Usuarios recibidos:", users);
+    let users;
+    try {
+        users = await getData("usuarios");
+    } catch {
+        showMessage("Error al obtener usuarios del servidor");
+        return;
+    }
     if (!Array.isArray(users)) {
         showMessage("Error al obtener usuarios del servidor");
         return;
@@ -41,17 +41,16 @@ btninicio.addEventListener("click", async e => {
         ) &&
         u.password === pass
     );
-
     if (current?.tipoUsuario === "estudiante") {
         localStorage.setItem("currentUser", current.usuario);
+        localStorage.setItem("nombreCompleto", current.nombre);
+        localStorage.setItem("nombre", current.nombre);
         showMessage("Inicio de sesión exitoso", "success");
-        localStorage.setItem("nombre",current.nombre)
         setTimeout(() => {
             window.location.href = "/pages/solicitud.html";
         }, 1000);
         return;
     }
-
     if (current?.tipoUsuario === "profesor") {
         localStorage.setItem("currentUser", current.usuario);
         showMessage("Inicio de sesión exitoso", "success");
@@ -60,6 +59,5 @@ btninicio.addEventListener("click", async e => {
         }, 1000);
         return;
     }
-
     showMessage("Usuario o contraseña incorrectos");
 });

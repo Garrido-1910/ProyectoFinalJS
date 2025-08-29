@@ -8,12 +8,12 @@
 </head>
 <body>
   <main class="historial-main">
-    <h2 class="historial-title">Historial de Solicitudes</h2>
+    <h1 class="historial-title">Historial de Solicitudes</h1>
     <section class="historial-filtros">
-      <label>Estudiante:<br><input id="filtronombre" type="text"></label>
-      <label>Fecha Salida:<br><input id="filtrofecha" type="date"></label>
-      <label>Estado:<br>
-        <select id="filtroestado">
+      <label for="filtronombre">Estudiante:<br><input id="filtronombre" type="text" name="filtronombre"></label>
+      <label for="filtrofecha">Fecha Salida:<br><input id="filtrofecha" type="date" name="filtrofecha"></label>
+      <label for="filtroestado">Estado:<br>
+        <select id="filtroestado" name="filtroestado">
           <option value="">Todos</option>
           <option value="pendiente">Pendiente</option>
           <option value="aprobada">Aprobada</option>
