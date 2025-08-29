@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../styles/registro.css">
 </head>
+
 <body>
-    <div id="container2">
-        <h2>Registro</h2>
-        <input type="text" id="nombre" placeholder="Nombre completo" required>
-        <input type="email" id="correo" placeholder="Correo electrónico" autocomplete="email" required>
-        <input type="text" id="usuario" placeholder="Nombre de usuario" autocomplete="username" required>
-        <input type="password" id="password" placeholder="Contraseña" autocomplete="new-password" required>
-        <input type="password" id="confirmar" placeholder="Confirmar contraseña" autocomplete="new-password" required>
-        <input type="tel" id="Telefono" placeholder="Num. Teléfono">
-        <button id="button">Registrarse</button>
-        <a href="iniciosecion.html">¿Ya tienes cuenta?</a>
+    
+    <div class="main-flex-container">
+        <div class="left"></div>
+        <div class="right">
+            <div id="container2">
+                <h2>Registro</h2>
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
+                <input type="email" id="correo" placeholder="Correo electrónico" autocomplete="email" required>
+                <input type="text" id="usuario" placeholder="Nombre de usuario" autocomplete="username" required>
+                <input type="password" id="password" placeholder="Contraseña" autocomplete="new-password" required>
+                <input type="password" id="confirmar" placeholder="Confirmar contraseña" autocomplete="new-password"
+                    required>
+                <input type="tel" id="Telefono" placeholder="Num. Teléfono">
+                <button id="button">Registrarse</button>
+                <a href="iniciosecion.html">¿Ya tienes cuenta?</a>
+            </div>
+        </div>
     </div>
+    </div>
+
     <script type="module" src="../js/registro.js"></script>
 </body>
+
 </html>
