@@ -17,6 +17,14 @@
       "password": "123456789",
       "telefono": "123456",
       "tipoUsuario": "estudiante"
+    },
+    {
+      "nombre": "pedro",
+      "correo": "pedro@gmail.com",
+      "usuario": "pedro",
+      "password": "123456789",
+      "telefono": "123456",
+      "tipoUsuario": "estudiante"
     }
   ],
   "solicitudes": [
