@@ -107,17 +107,9 @@ a {
 a:hover {
   color: #1f3c88;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> f03ab441eff50d115b41d564e7896588ca0fa628
 .disabled-link {
   pointer-events: none;
   opacity: 0.5;
   color: #888 !important;
   cursor: default;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> f03ab441eff50d115b41d564e7896588ca0fa628
