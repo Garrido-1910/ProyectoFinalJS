@@ -1,3 +1,4 @@
+import { patchData } from "../services/fetch.js";
 
 const resultado = document.getElementById("resultado");
 const filtronombre = document.getElementById("filtronombre");
@@ -7,7 +8,7 @@ let solicitudes = [];
 
 
 async function cargarSolicitudes() {
-  const res = await fetch("http://localhost:3001/solicitudes"); // CAMBIO
+  const res = await fetch("http://localhost:3001/solicitudes"); 
   solicitudes = await res.json();
   mostrarSolicitudes();
 }
@@ -38,7 +39,21 @@ function mostrarSolicitudes() {
    ${s.codigoEquipo}
    ${s.estado || "pendiente"}
     `;
+    const btnDevolver = document.createElement("button")
+    btnDevolver.textContent = "Devolver"
     resultado.appendChild(div);
+    resultado.appendChild(btnDevolver)
+
+    btnDevolver.addEventListener("click",async function() {
+        const solicitudActualizada = {
+          devuelta: true,
+          estado: "devuelta"
+        }
+        await patchData(solicitudActualizada,"solicitudes",s.id)
+        
+
+    })
+
   });
 }
 

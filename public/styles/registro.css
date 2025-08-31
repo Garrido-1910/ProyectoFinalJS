@@ -4,38 +4,14 @@ body {
   min-height: 100vh;
   font-family: "Segoe UI", Roboto, Arial, sans-serif;
   background: linear-gradient(135deg, #eef2f7, #d9e4f5);
-}
-
-.main-flex-container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-}
-
-.left {
-  flex: 1 1 0;
-  background: url('../img/1-0cd095a0.jpg') no-repeat center center;
-  background-size: cover;
-  position: relative;
-}
-
-.left::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 2.5px;
-  height: 100%;
-  background: linear-gradient(to bottom, #c81085 0%, #009fe3 100%);
-  z-index: 2;
-}
-
-.right-register-side {
-  flex: 1 1 0;
+  margin: 0;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  align-items: center;
+  height: 100vh;
+  color: #2c3e50;
 }
 
 #container2 {
@@ -107,9 +83,8 @@ a {
 a:hover {
   color: #1f3c88;
 }
-.disabled-link {
-  pointer-events: none;
-  opacity: 0.5;
-  color: #888 !important;
-  cursor: default;
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
