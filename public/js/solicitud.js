@@ -1,5 +1,13 @@
 
 import { postData } from "../services/fetch.js";
+
+
+const usuario_iniciales = localStorage.getItem("nombre").split(" ")
+const iniciales = usuario_iniciales.map((inicial)=> inicial[0].toLocaleUpperCase()).join(" ")
+const idEstudiante = document.getElementById("idEstudiante").value = iniciales;
+
+
+
 window.addEventListener("DOMContentLoaded", () => {
   const usuarioDiv = document.querySelector(".usuario h1");
   usuarioDiv.textContent = localStorage.getItem("currentUser");
@@ -19,7 +27,6 @@ function mostrarMensaje(msg, type = "error") {
 }
 form.addEventListener("submit",async (e) => {
   e.preventDefault();
-  const idEstudiante = document.getElementById("idEstudiante").value.trim();
   const sede = document.getElementById("sede").value;
   const fechaSalida = new Date(document.getElementById("fechaSalida").value);
   const fechaRegreso = new Date(document.getElementById("fechaRegreso").value);

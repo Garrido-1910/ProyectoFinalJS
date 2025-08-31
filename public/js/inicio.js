@@ -43,6 +43,7 @@ document.getElementById("btninicio")?.addEventListener("click", async e => {
     );
     if (current?.tipoUsuario === "estudiante") {
         localStorage.setItem("currentUser", current.usuario);
+        localStorage.setItem("nombreCompleto", current.nombre);
         localStorage.setItem("nombre", current.nombre);
         showMessage("Inicio de sesión exitoso", "success");
         setTimeout(() => {

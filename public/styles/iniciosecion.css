@@ -1,19 +1,43 @@
- .disabled-link {
-  pointer-events: none;
-  opacity: 0.5;
-  color: #888 !important;
-  cursor: default;
-}
 body {
-  font-family: "Segoe UI", Roboto, Arial, sans-serif;
-  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  color: #2c3e50;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+}
+
+.main-flex-container {
   display: flex;
-  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.left {
+  flex: 1 1 0;
+  background: url('../img/hoytravajas.jpg') no-repeat center center;
+  background-size: cover;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+}
+
+.left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #3498db 0%, #1f3c88 100%);
+  z-index: 2;
+}
+
+.right {
+  flex: 1 1 0;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  background: transparent;
 }
 
 #container1 {
@@ -85,9 +109,14 @@ a {
 a:hover {
   color: #1f3c88;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> f03ab441eff50d115b41d564e7896588ca0fa628
 .disabled-link {
   pointer-events: none;
   opacity: 0.5;
   color: #888 !important;
   cursor: default;
 }
+
