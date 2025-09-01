@@ -1,4 +1,3 @@
-
 import { postData } from "../services/fetch.js";
 
 
@@ -9,8 +8,7 @@ const idEstudiante = document.getElementById("idEstudiante").value = iniciales;
 
 
 window.addEventListener("DOMContentLoaded", () => {
-  const usuarioDiv = document.querySelector(".usuario h1");
-  usuarioDiv.textContent = localStorage.getItem("currentUser");
+  const t = localStorage.getItem("currentUser");
   mostrarMensaje("Bienvenido, por favor complete la solicitud de préstamo de computadora.", "info");
 });
 const form = document.getElementById("formSolicitud");

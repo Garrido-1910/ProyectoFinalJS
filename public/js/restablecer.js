@@ -1,16 +1,28 @@
+import { getData } from "../services/fetch.js";
+
 (function() {
-  emailjs.init({ publicKey: "yaNVXGQKwld3JnIwK" }); 
+  emailjs.init({ publicKey: "yaNVXGQKwld3JnIwK"}); 
 })();
 
 function generateToken() {
   return Math.random().toString(36).substring(2, 10).toUpperCase();
 }
 
-function sendRecovery() {
+
+async function sendRecovery() {
   const email = document.getElementById("email").value;
+
   if (!email) {
     alert("Por favor ingresa tu correo");
     return;
+  }
+  const usuariosRegistrados = await getData("usuarios")
+
+  const estaRegistrado = usuariosRegistrados.some((correoUsuario)=>correoUsuario.correo === email)
+
+  if (!estaRegistrado) {
+      alert("Cuenta no registrada")
+      return
   }
 
   const token = generateToken();

@@ -11,7 +11,7 @@
     },
     {
       "id": "d427",
-      "nombre": "Christopher Alberto Garrido Sanchez",
+      "nombre": "Christopher Alberto Garrido",
       "correo": "aña@gmail.com",
       "usuario": "pepe",
       "password": "123456789",
@@ -24,7 +24,8 @@
       "usuario": "pedro",
       "password": "123456789",
       "telefono": "123456",
-      "tipoUsuario": "estudiante"
+      "tipoUsuario": "estudiante",
+      "id": "6790"
     }
   ],
   "solicitudes": [
@@ -37,7 +38,7 @@
       "codigoEquipo": "PC-2025-03",
       "firma": true,
       "devuelta": true,
-      "estado": "devuelta"
+      "estado": "pendiente"
     },
     {
       "id": "2cdf",
@@ -46,7 +47,9 @@
       "fechaSalida": "2025-08-12T00:00:00.000Z",
       "fechaRegreso": "2025-08-28T00:00:00.000Z",
       "codigoEquipo": "PC-2025-01",
-      "firma": "11"
+      "firma": "11",
+      "devuelta": true,
+      "estado": "devuelta"
     },
     {
       "id": "f01b",
@@ -55,7 +58,9 @@
       "fechaSalida": "2025-08-13T00:00:00.000Z",
       "fechaRegreso": "2025-08-28T00:00:00.000Z",
       "codigoEquipo": "PC-2025-01",
-      "firma": "11"
+      "firma": "11",
+      "devuelta": true,
+      "estado": "devuelta"
     }
   ]
 }

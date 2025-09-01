@@ -1,3 +1,12 @@
+/* Tamaño fijo para todas las imágenes de perfil */
+.perfilcard img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 16px auto;
+}
 body {
   margin: 0;
   padding: 0;

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="../js/restablecer.js"
-    defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> <!--Acá importamos la funcionalidada del emailjs-->
+    <script type="module" src="../js/restablecer.js"
+    defer></script> <!--¿Qué es defer? Funciona para retrasar la ejución del script hasta que la página se cargue-->
 </head>
 <body>
     <input type="email" id="email" placeholder="Ingresa tu correo">
-    <button id="btnEnviar">Enviar</button>
+    <button type="button" id="btnEnviar">Enviar</button>
 </body>
 </html>
