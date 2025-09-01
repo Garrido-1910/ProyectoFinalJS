@@ -6,13 +6,13 @@ const filtroFecha = document.getElementById("filtrofecha");
 const filtroEstado = document.getElementById("filtroestado");
 let solicitudes = [];
 
-
+/* Carga todas las solicitudes del backend y las muestra */
 async function cargarSolicitudes() {
   const res = await fetch("http://localhost:3001/solicitudes"); 
   solicitudes = await res.json();
   mostrarSolicitudes();
 }
-
+/* Muestra las solicitudes filtradas */
 function mostrarSolicitudes() {
   const nombre = filtronombre?.value.trim().toLowerCase() || "";
   const fecha = filtroFecha?.value || "";
@@ -27,7 +27,7 @@ function mostrarSolicitudes() {
     resultado.innerHTML = "No hay solicitudes";
     return;
   }
-
+ /* Limpia el resultado y agrega cada solicitud filtrada */
   resultado.innerHTML = "";
   filtradas.forEach(s => {
     const div = document.createElement("div");

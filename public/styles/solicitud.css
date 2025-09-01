@@ -116,3 +116,17 @@ button {
   color: #666;
   line-height: 1.6;
 }
+
+.logo {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  background-image: url('../img/fwdlogo.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  }

@@ -1,7 +1,7 @@
 import { getData } from "../services/fetch.js";
 
 const contenedor = document.getElementById("listaSolicitudes");
-
+/* Función que obtiene y muestra las solicitudes pendientes */
 async function mostrarSolicitudes() {
   const res = await getData("solicitudes")
   
@@ -24,7 +24,7 @@ const campos = [
   ["Fecha Regreso: ", solicitud.fechaRegreso ? solicitud.fechaRegreso.slice(0,10) : ""],
   ["Estado: ", solicitud.estado || "pendiente"]
 ];
-
+    /* Agrega los campos al elemento de la solicitud */
 pCodigoEquipo.innerHTML = "";
 for (const [label, valor] of campos) {
   const div = document.createElement("div");

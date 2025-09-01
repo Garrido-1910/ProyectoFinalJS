@@ -9,6 +9,8 @@ const confirmar = document.getElementById("confirmar");
 const btnregis = document.getElementById("button");
 const registroconten = document.getElementById("container2");
 const telefono = document.getElementById("Telefono");
+
+/* Función para mostrar mensajes en pantalla */
 function showMessage(msg, type = "error") {
     let msgDiv = document.getElementById("msg");
     if (!msgDiv) {
@@ -29,6 +31,8 @@ function getUsers() {
 function saveUsers(users) {
     localStorage.setItem("users", JSON.stringify(users));
 }
+
+/* Evento para el botón de registro */
 btnregis?.addEventListener("click", async e => {
     e.preventDefault();
     const nombreVal = nombre?.value.trim();
@@ -36,6 +40,7 @@ btnregis?.addEventListener("click", async e => {
     const passwordVal = password?.value;
     const confirmarVal = confirmar?.value;
     const telefonoVal = telefono?.value.trim();
+      /* Validaciones de campos */
     if (!nombreVal || !correoVal || !passwordVal || !confirmarVal || !telefonoVal) {
         showMessage("Todos los campos son obligatorios");
         return;
