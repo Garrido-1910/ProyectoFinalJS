@@ -110,3 +110,8 @@ btnTerminos.addEventListener("click", () => {
     : "❌ Ocultar términos y condiciones";
   btnTerminos.textContent == "📑 Ver términos y condiciones"  ? ocultar.style.display = "none" : ocultar.style.display = "block"
 });
+
+  document.getElementById("formSolicitud").addEventListener("submit", function(e) {
+    e.preventDefault();
+    window.location.href = "perfil.html";
+  });

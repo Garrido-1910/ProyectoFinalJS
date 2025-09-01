@@ -53,3 +53,7 @@ async function sendRecovery() {
 }
 
 document.getElementById("btnEnviar").addEventListener("click", sendRecovery);
+
+  document.getElementById("btnConfirmar").addEventListener("click", function() {
+    window.location.href = "iniciosesion.html";
+  });
