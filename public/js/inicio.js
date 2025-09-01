@@ -1,4 +1,3 @@
-
 import { getData } from "../services/fetch.js";
 
 const registroconten = document.getElementById("container1");
@@ -13,8 +12,8 @@ function showMessage(msg, type = "error") {
     msgDiv.innerText = msg;
     msgDiv.className = type;
 }
-/* Evento para el botón de inicio de sesión */
-document.getElementById("btninicio")?.addEventListener("click", async e => {
+/* Evento para el formulario de inicio de sesión */
+document.getElementById("loginForm")?.addEventListener("submit", async e => {
     e.preventDefault();
     const name = document.getElementById("username")?.value.trim();
     const pass = document.getElementById("password")?.value;
@@ -48,7 +47,7 @@ document.getElementById("btninicio")?.addEventListener("click", async e => {
         localStorage.setItem("nombre", current.nombre);
         showMessage("Inicio de sesión exitoso", "success");
         setTimeout(() => {
-            window.location.href = "/pages/solicitud.html";
+            window.location.href = "../pages/solicitud.html";
         }, 1000);
         return;
     }
@@ -56,7 +55,7 @@ document.getElementById("btninicio")?.addEventListener("click", async e => {
         localStorage.setItem("currentUser", current.usuario);
         showMessage("Inicio de sesión exitoso", "success");
         setTimeout(() => {
-            window.location.href = "/pages/admins.html";
+            window.location.href = "../pages/admins.html";
         }, 1000);
         return;
     }

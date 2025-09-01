@@ -17,7 +17,8 @@ function sendRecovery() {
     alert("Por favor ingresa tu correo");
     return;
   }
-  const usuariosRegistrados = await getData("usuarios")
+  
+  const usuariosRegistrados = await getData("usuarios");
 
   const estaRegistrado = usuariosRegistrados.some((correoUsuario)=>correoUsuario.correo === email)
 

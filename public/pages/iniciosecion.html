@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="../styles/iniciosecion.css">
 </head>
 <body>
-    <main id="container1">
-        <h1>Iniciar Sesión</h1>
-        <form autocomplete="on">
-            <label for="username">Correo o usuario</label>
-            <input type="text" id="username" name="username" placeholder="Correo o usuario" autocomplete="username" required>
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="current-password" required>
-            <button id="btninicio" type="button">Ingresar</button>
-        </form>
-        <nav class="nav-margin-top">
-            <a href="../pages/restablecer.html" >¿Olvidaste tu contraseña?</a>
-            <a href="../pages/registro.html">¿No tienes cuenta?</a>
-        </nav>
-    </main>
+    <div class="main-flex-container">
+        <div class="left"></div>
+        <div class="right">
+            <main id="container1">
+                <h1>Iniciar Sesión</h1>
+                <form id="loginForm" autocomplete="on">
+                    <label for="username">Correo o usuario</label>
+                    <input type="text" id="username" name="username" placeholder="Correo o usuario" autocomplete="username" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" autocomplete="current-password" required>
+                    <button id="btninicio" type="submit">Ingresar</button>
+                </form>
+                <div id="msg"></div>
+                <nav class="nav-margin-top">
+                    <a href="../pages/restablecer.html">¿Olvidaste tu contraseña?</a>
+                    <a href="../pages/registro.html">¿No tienes cuenta?</a>
+                </nav>
+            </main>
+        </div>
+    </div>
     <script type="module" src="../js/inicio.js"></script>
 </body>
 </html>
