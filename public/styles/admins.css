@@ -1,3 +1,21 @@
+/* Estilos para el enlace historial */
+#historialLink {
+  display: inline-block;
+  margin: 24px auto 0 auto;
+  padding: 10px 24px;
+  background-color: #2d6cdf;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s, color 0.2s;
+}
+#historialLink:hover {
+  background-color: #174a96;
+  color: #e0e0e0;
+}
 .admin-main {
   max-width: 700px;
   margin: 40px auto;
