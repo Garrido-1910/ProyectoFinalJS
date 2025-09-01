@@ -12,11 +12,12 @@
     {
       "id": "d427",
       "nombre": "Christopher Alberto Garrido",
-      "correo": "aña@gmail.com",
+      "correo": "c.garridofwd19@gmail.com",
       "usuario": "pepe",
-      "password": "123456789",
+      "password": "dasda",
       "telefono": "123456",
-      "tipoUsuario": "estudiante"
+      "tipoUsuario": "estudiante",
+      "token": ""
     },
     {
       "nombre": "pedro",

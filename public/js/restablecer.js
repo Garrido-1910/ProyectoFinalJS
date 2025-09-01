@@ -1,7 +1,7 @@
-import { getData } from "../services/fetch.js";
+import { getData, patchData } from "../services/fetch.js";
 
 (function() {
-  emailjs.init({ publicKey: "yaNVXGQKwld3JnIwK"}); 
+  emailjs.init({ publicKey: "8bN0QIk-kbTdEAy6x"}); 
 })();
 
 /* Generar aleatorio para recuperación */
@@ -10,14 +10,14 @@ function generateToken() {
 }
 
 /* Envía el correo de recuperación con el token */
-function sendRecovery() {
+async function sendRecovery() {
   const email = document.getElementById("email").value;
 
   if (!email) {
     alert("Por favor ingresa tu correo");
     return;
   }
-  
+
   const usuariosRegistrados = await getData("usuarios");
 
   const estaRegistrado = usuariosRegistrados.some((correoUsuario)=>correoUsuario.correo === email)
@@ -26,18 +26,25 @@ function sendRecovery() {
       alert("Cuenta no registrada")
       return
   }
-
+  const idUsuario = usuariosRegistrados.find((usuario) => usuario.correo === email).id;
+  console.log(idUsuario);
+  localStorage.setItem("idUsuario", idUsuario);
   const token = generateToken();
-  const link = `aaaaa`; 
+  const link = `http://localhost:3000/pages/restablecer.html`; 
   /* Envía el correo usando emailjs */
-  emailjs.send("service_mqp2a4u", "template_m0bnnew", {
+  emailjs.send("service_gn1q517", "template_tsm82ra", {
     to_email: email,
     token: token,
     link: link,
     email: email
   })
-  .then(() => {
+  .then(async() => {
     alert("¡Correo de recuperación enviado!");
+    await patchData({ token: token }, "usuarios", idUsuario);
+    localStorage.setItem("token", token);
+    setTimeout(() => {
+        window.location.href = "../pages/nuevaContra.html"
+    }, 500);
   })
   .catch(err => {
     console.error("Error:", err);
