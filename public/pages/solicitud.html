@@ -13,7 +13,7 @@
       <h2>Bienvenido</h2>
       
     </section>
-    
+  <a href="perfil.html" title="Ir al perfil" id="perfil" class="btn-perfil">Ir al perfil</a>
     <form id="formSolicitud" autocomplete="on">
       <label for="idEstudiante">ID del Estudiante:</label>
       <input type="text" id="idEstudiante" name="idEstudiante" readonly>
@@ -35,7 +35,7 @@
         <label for="condiciones">Acepto las condiciones de uso del equipo</label>
       </div>
       <button type="button" id="toggleTerminos">📑 Ver términos y condiciones</button>
-      <div class="terminos oculto">
+      <div class="terminos oculto" id="ocultar">
         <ul>
           <li>Si viajas en transporte público, debes resguardar tu equipo en tu bolso personal, no exponerlo.</li>
           <li>Si llevas el equipo, procura ir acompañado.</li>
@@ -55,7 +55,6 @@
       <p>Por favor complete todos los campos para solicitar el préstamo de equipo.</p>
     </section>
   </main>
-  <a href="../pages/perfil.html" class="logo"></a>
   <script type="module" src="../js/solicitud.js"></script>
 </body>
 </html>

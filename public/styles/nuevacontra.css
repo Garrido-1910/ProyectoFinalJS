@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: linear-gradient(120deg, #d2e1fa 0%, #f9fafd 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #25396f;
+}
+
+#container2 {
+  background: #fff;
+  padding: 38px 32px 32px 32px;
+  border-radius: 18px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 10px 32px rgba(34, 72, 155, 0.11), 0 1.5px 8px rgba(34,72,155,0.05);
+  text-align: center;
+  border: 1.5px solid #e4e9f7;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(4px);
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #2851a3;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 0 0 6px 2px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #3f5484;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 13px 12px;
+  border-radius: 12px;
+  border: 1.7px solid #c9d6ee;
+  font-size: 1rem;
+  background: #f8faff;
+  color: #25396f;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #4676ec;
+  box-shadow: 0 0 8px rgba(70, 118, 236, 0.13);
+  outline: none;
+  background: #f0f6ff;
+}
+
+button {
+  background: linear-gradient(135deg, #4676ec 0%, #2851a3 100%);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 0;
+  margin-top: 8px;
+  width: 100%;
+  font-size: 1.08rem;
+  box-shadow: 0 6px 18px rgba(70, 118, 236, 0.13);
+  letter-spacing: 0.01em;
+  transition: background 0.25s, box-shadow 0.22s, transform 0.17s;
+}
+
+button:hover, button:focus {
+  background: linear-gradient(135deg, #2851a3 0%, #4676ec 100%);
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 10px 24px rgba(70, 118, 236, 0.20);
+}
+
+a {
+  display: block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: #4676ec;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+a:hover {
+  color: #2851a3;
+  text-decoration: underline;
+}

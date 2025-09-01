@@ -1,9 +1,30 @@
 import { postData } from "../services/fetch.js";
 
 
-const usuario_iniciales = localStorage.getItem("nombre").split(" ")
-const iniciales = usuario_iniciales.map((inicial)=> inicial[0].toLocaleUpperCase()).join(" ")
-const idEstudiante = document.getElementById("idEstudiante").value = iniciales;
+
+// Mostrar perfil en la sección superior
+window.addEventListener("DOMContentLoaded", () => {
+  // Foto de perfil
+  const fotoPerfil = localStorage.getItem("fotoPerfil");
+  const imgPerfil = document.getElementById("fotoPerfilSolicitud");
+  if (imgPerfil && fotoPerfil) {
+    imgPerfil.src = fotoPerfil;
+  } else if (imgPerfil) {
+    imgPerfil.src = "../img/fwdlogo.jpg"; // Imagen por defecto
+  }
+  // Nombre completo
+  const nombreCompleto = localStorage.getItem("nombreCompleto") || localStorage.getItem("nombre") || "Usuario";
+  const nombrePerfil = document.getElementById("nombrePerfilSolicitud");
+  if (nombrePerfil) nombrePerfil.textContent = nombreCompleto;
+  // Usuario
+  const usuario = localStorage.getItem("currentUser") || "-";
+  const usuarioPerfil = document.getElementById("usuarioPerfilSolicitud");
+  if (usuarioPerfil) usuarioPerfil.textContent = usuario;
+  // Iniciales para el campo ID
+  const usuario_iniciales = nombreCompleto.split(" ");
+  const iniciales = usuario_iniciales.map((inicial)=> inicial[0]?.toLocaleUpperCase() || "").join(" ");
+  document.getElementById("idEstudiante").value = iniciales;
+});
 
 
 /* Evento al cargar la página: muestra mensaje y usuario */
