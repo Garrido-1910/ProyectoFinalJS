@@ -1,0 +1,136 @@
+.oculto {
+  display: none !important;
+}
+
+.perfil {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  border-radius: 20px;
+}
+
+.condiciones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #444;
+}
+
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.5;
+  color: #888 !important;
+  cursor: default;
+}
+
+#ocultar {
+  display: none;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #eef2f7, #d9e4f5);
+  margin: 0;
+  padding: 20px;
+  color: #2c3e50;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerrestablecer {
+  max-width: 400px;
+  width: 100%;
+  background: #fff;
+  padding: 32px 28px 28px 28px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  animation: fadeIn 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  color: #1f3c88;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input[type="email"] {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="email"]:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #3498db, #2c82c9);
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.info {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.bannerfwd {
+position: fixed;
+  width: 100%;
+  max-width: 700px;
+  height: 260px;
+  bottom: 350px;
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+}
+
+.logo {
+  position: fixed;
+  bottom: 24px;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  background-image: url('../img/fwdlogo.jpg');
+  background-size: contain;
+  border-radius: 50%;
+  }

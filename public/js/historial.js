@@ -25,7 +25,7 @@ async function mostrarSolicitudes() {
     resultado.innerHTML = "No hay solicitudes";
     return;
   }
-
+ /* Limpia el resultado y agrega cada solicitud filtrada */
   resultado.innerHTML = "";
   solicitudes.forEach(s => {
     const div = document.createElement("div");

@@ -2,7 +2,7 @@
 import { getData } from "../services/fetch.js";
 
 const registroconten = document.getElementById("container1");
-
+/* Función para mostrar mensajes de error o éxito */
 function showMessage(msg, type = "error") {
     let msgDiv = document.getElementById("msg");
     if (!msgDiv) {
@@ -13,7 +13,7 @@ function showMessage(msg, type = "error") {
     msgDiv.innerText = msg;
     msgDiv.className = type;
 }
-
+/* Evento para el botón de inicio de sesión */
 document.getElementById("btninicio")?.addEventListener("click", async e => {
     e.preventDefault();
     const name = document.getElementById("username")?.value.trim();
@@ -33,6 +33,7 @@ document.getElementById("btninicio")?.addEventListener("click", async e => {
         showMessage("Error al obtener usuarios del servidor");
         return;
     }
+ /* Busca el usuario según nombre, correo o usuario y contraseña */
     const current = users.find(u =>
         (
             u.nombre?.toLowerCase() === name.toLowerCase() ||

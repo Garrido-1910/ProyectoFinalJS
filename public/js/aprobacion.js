@@ -2,7 +2,7 @@
 import { getData } from "../services/fetch.js";
 
 const contenedor = document.getElementById("listaSolicitudes");
-
+/* Función para mostrar las solicitudes para aprobación */
 async function mostrarSolicitudes() {
   let res = [];
   try {

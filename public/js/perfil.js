@@ -4,70 +4,85 @@ import { getData } from "../services/fetch.js";
 const resultado = document.getElementById("resultado");
 const usuarioActual = localStorage.getItem("currentUser");
 
-const namePerfil = document.getElementById("nameperfil");
+
+function getNamePerfil() {
+	return document.getElementById("nameperfil");
+}
+function getBtnEditarNombre() {
+	return document.getElementById("nombreperfil");
+}
 const btnFoto = document.getElementById("fotoperfil");
 const imgPerfil = document.querySelector(".perfilcard img");
-const btnEditarNombre = document.getElementById("nombreperfil");
 
 let usuarioDb = null;
 
-// Mostrar nombre de usuario
+// Mostrar nombre de usuario y asignar eventos
 window.addEventListener("DOMContentLoaded", async () => {
-		if (usuarioActual && namePerfil) {
-			// Buscar el usuario en db.json vía backend
-			let usuarios = [];
-			try {
-				usuarios = await getData("usuarios");
-			} catch {}
-			usuarioDb = usuarios.find(u =>
-				u.usuario?.toLowerCase() === usuarioActual.toLowerCase() ||
-				u.nombre?.toLowerCase() === usuarioActual.toLowerCase() ||
-				u.correo?.toLowerCase() === usuarioActual.toLowerCase()
-			);
-			namePerfil.textContent = usuarioDb?.nombre || usuarioActual;
-		}
-		cargarHistorialUsuario();
-// Editar nombre de usuario
-if (btnEditarNombre && namePerfil) {
-	btnEditarNombre.addEventListener("click", () => {
-		if (!usuarioDb) return;
-		// Reemplazar el h2 por un input temporal y un botón guardar
-		const input = document.createElement("input");
-		input.type = "text";
-		input.value = usuarioDb.nombre;
-		input.id = "inputNuevoNombre";
-		input.style.marginRight = "8px";
-		const btnGuardar = document.createElement("button");
-		btnGuardar.textContent = "Guardar";
-		btnGuardar.type = "button";
-		// Reemplazar h2 por input y botón
-		namePerfil.replaceWith(input);
-		btnEditarNombre.replaceWith(btnGuardar);
-		input.focus();
-		btnGuardar.addEventListener("click", async () => {
-			const nuevoNombre = input.value.trim();
-			if (!nuevoNombre) return alert("El nombre no puede estar vacío");
-			// PATCH al backend
-			try {
-				await fetch(`http://localhost:3001/usuarios/${usuarioDb.id}`, {
-					method: "PATCH",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ nombre: nuevoNombre })
-				});
-				usuarioDb.nombre = nuevoNombre;
-				// Restaurar h2 y botón
-				const nuevoH2 = document.createElement("h2");
-				nuevoH2.id = "nameperfil";
-				nuevoH2.textContent = nuevoNombre;
-				input.replaceWith(nuevoH2);
-				btnGuardar.replaceWith(btnEditarNombre);
-			} catch {
-				alert("Error al guardar el nombre");
-			}
-		});
-	});
-}
+	const namePerfil = getNamePerfil();
+	if (usuarioActual && namePerfil) {
+		// Buscar el usuario en db.json vía backend
+		let usuarios = [];
+		try {
+			usuarios = await getData("usuarios");
+		} catch {}
+		usuarioDb = usuarios.find(u =>
+			u.usuario?.toLowerCase() === usuarioActual.toLowerCase() ||
+			u.nombre?.toLowerCase() === usuarioActual.toLowerCase() ||
+			u.correo?.toLowerCase() === usuarioActual.toLowerCase()
+		);
+		namePerfil.textContent = usuarioDb?.nombre || usuarioActual;
+	}
+	cargarHistorialUsuario();
+	asignarEventoEditarNombre();
 });
+
+function asignarEventoEditarNombre() {
+	const btnEditarNombre = getBtnEditarNombre();
+	const namePerfil = getNamePerfil();
+	if (btnEditarNombre && namePerfil) {
+		btnEditarNombre.onclick = () => {
+			if (!usuarioDb) return;
+			// Reemplazar el h2 por un input temporal y un botón guardar
+			const input = document.createElement("input");
+			input.type = "text";
+			input.value = usuarioDb.nombre;
+			input.id = "inputNuevoNombre";
+			input.style.marginRight = "8px";
+			const btnGuardar = document.createElement("button");
+			btnGuardar.textContent = "Guardar";
+			btnGuardar.type = "button";
+			// Reemplazar h2 por input y botón
+			namePerfil.replaceWith(input);
+			btnEditarNombre.replaceWith(btnGuardar);
+			input.focus();
+			btnGuardar.onclick = async () => {
+				const nuevoNombre = input.value.trim();
+				if (!nuevoNombre) return alert("El nombre no puede estar vacío");
+				// PATCH al backend
+				try {
+					await fetch(`http://localhost:3001/usuarios/${usuarioDb.id}`, {
+						method: "PATCH",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify({ nombre: nuevoNombre })
+					});
+					usuarioDb.nombre = nuevoNombre;
+					// Restaurar h2 y botón
+					const nuevoH2 = document.createElement("h2");
+					nuevoH2.id = "nameperfil";
+					nuevoH2.textContent = nuevoNombre;
+					input.replaceWith(nuevoH2);
+					const nuevoBtn = document.createElement("button");
+					nuevoBtn.id = "nombreperfil";
+					nuevoBtn.textContent = "Editar Nombre";
+					btnGuardar.replaceWith(nuevoBtn);
+					asignarEventoEditarNombre(); // Reasignar evento al nuevo botón
+				} catch {
+					alert("Error al guardar el nombre");
+				}
+			};
+		};
+	}
+}
 
 // Cambiar foto de perfil (abrir explorador de archivos y mostrar imagen)
 if (btnFoto && imgPerfil) {
