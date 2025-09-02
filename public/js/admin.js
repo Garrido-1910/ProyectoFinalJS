@@ -6,7 +6,7 @@ import { getData } from "../services/fetch.js";
 const contenedor = document.getElementById("listaSolicitudes");
 
 async function patchSolicitud(id, nuevoEstado) {
-  await fetch(`http://localhost:3000/solicitudes/${id}`, {
+  await fetch(`http://localhost:3001/solicitudes/${id}`, {
     method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ estado: nuevoEstado })
@@ -14,7 +14,7 @@ async function patchSolicitud(id, nuevoEstado) {
 }
 
 async function putSolicitud(id, data) {
-  await fetch(`http://localhost:3000/solicitudes/${id}`, {
+  await fetch(`http://localhost:3001/solicitudes/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -22,7 +22,7 @@ async function putSolicitud(id, data) {
 }
 
 async function deleteSolicitud(id) {
-  await fetch(`http://localhost:3000/solicitudes/${id}`, {
+  await fetch(`http://localhost:3001/solicitudes/${id}`, {
     method: "DELETE" });
 }
 

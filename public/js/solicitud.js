@@ -1,7 +1,6 @@
 import { postData } from "../services/fetch.js";
 
 
-
 // Mostrar perfil en la sección superior
 window.addEventListener("DOMContentLoaded", () => {
   // Foto de perfil
@@ -89,7 +88,7 @@ form.addEventListener("submit",async (e) => {
   mostrarMensaje("Solicitud enviada con éxito.", "success");
   form.reset();
   const solicitud={
-      idEstudiante: idEstudiante,
+      idEstudiante: localStorage.getItem("currentUser"),
       sede:sede,
       fechaSalida: fechaSalida.toISOString(), 
       fechaRegreso: fechaRegreso.toISOString(), 
