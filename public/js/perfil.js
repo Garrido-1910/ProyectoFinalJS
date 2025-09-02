@@ -119,7 +119,7 @@ async function cargarHistorialUsuario() {
         return;
     }
     // Usar solo el id del usuario logueado
-    const idUsuario = usuarioDb?.id;
+    const idUsuario = localStorage.getItem("currentUser")
     const historial = solicitudes.filter(s =>
         s.idEstudiante == idUsuario
     );

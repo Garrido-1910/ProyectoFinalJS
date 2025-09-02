@@ -12,11 +12,12 @@
     {
       "id": "d427",
       "nombre": "Christopher Alberto Garrido",
-      "correo": "aña@gmail.com",
+      "correo": "c.garridofwd19@gmail.com",
       "usuario": "pepe",
-      "password": "123456789",
+      "password": "dasda",
       "telefono": "123456",
-      "tipoUsuario": "estudiante"
+      "tipoUsuario": "estudiante",
+      "token": ""
     },
     {
       "nombre": "pedro",
@@ -26,6 +27,15 @@
       "telefono": "123456",
       "tipoUsuario": "estudiante",
       "id": "6790"
+    },
+    {
+      "id": "31a1",
+      "nombre": "Pepe Antonio",
+      "correo": "pepe@gmail.net",
+      "usuario": "PA",
+      "password": "123456",
+      "telefono": "911",
+      "tipoUsuario": "estudiante"
     }
   ],
   "solicitudes": [
@@ -61,6 +71,15 @@
       "firma": "11",
       "devuelta": true,
       "estado": "devuelta"
+    },
+    {
+      "id": "2fbc",
+      "idEstudiante": "PA",
+      "sede": "San José",
+      "fechaSalida": "2025-09-01T00:00:00.000Z",
+      "fechaRegreso": "2025-09-01T00:00:00.000Z",
+      "codigoEquipo": "PC-2025-03",
+      "firma": "a"
     }
   ]
 }

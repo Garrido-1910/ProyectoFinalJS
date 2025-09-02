@@ -6,7 +6,7 @@ const correo = document.getElementById("correo");
 const usuario = document.getElementById("usuario");
 const password = document.getElementById("password");
 const confirmar = document.getElementById("confirmar");
-const btnregis = document.getElementById("button");
+const btnregis = document.getElementById("buton");
 const registroconten = document.getElementById("container2");
 const telefono = document.getElementById("Telefono");
 
