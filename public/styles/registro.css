@@ -83,3 +83,39 @@ a {
 a:hover {
   color: #1f3c88;
 }
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.left {
+  flex: 1 1 0;
+  background: url('../img/1-0cd095a0.jpg') no-repeat center center;
+  background-size: cover;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  position: relative;
+}
+
+/* Línea divisoria vertical en el centro */
+.left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2.5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #3498db 0%, #1f3c88 100%);
+  z-index: 2;
+}
+
+.right {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
