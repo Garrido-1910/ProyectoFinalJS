@@ -1,4 +1,4 @@
-import { postData } from "../services/fetch.js";
+import { patchData, postData } from "../services/fetch.js";
 
 
 // Mostrar perfil en la sección superior
@@ -22,7 +22,10 @@ window.addEventListener("DOMContentLoaded", () => {
   // Iniciales para el campo ID
   const usuario_iniciales = nombreCompleto.split(" ");
   const iniciales = usuario_iniciales.map((inicial)=> inicial[0]?.toLocaleUpperCase() || "").join(" ");
+  const codigoEquipo = document.getElementById("codigoEquipo")
+  codigoEquipo.value = `PC-${new Date().getFullYear()}-${iniciales}-${Math.floor(Math.random()*1000)}`;
   document.getElementById("idEstudiante").value = iniciales;
+  localStorage.setItem("codigoEquipo", codigoEquipo.value);
 });
 
 
@@ -53,7 +56,6 @@ form.addEventListener("submit",async (e) => {
   const sede = document.getElementById("sede").value;
   const fechaSalida = new Date(document.getElementById("fechaSalida").value);
   const fechaRegreso = new Date(document.getElementById("fechaRegreso").value);
-  const codigoEquipo = document.getElementById("codigoEquipo").value.trim();
   const condiciones = document.getElementById("condiciones").checked;
   const firma = document.getElementById("firma").value.trim();
     /* Validaciones de campos */
@@ -69,34 +71,36 @@ form.addEventListener("submit",async (e) => {
     mostrarMensaje("Debes seleccionar ambas fechas.");
     return;
   }
+
   if (fechaRegreso < fechaSalida) {
     mostrarMensaje("La fecha de regreso no puede ser anterior a la de salida.");
-    return;
-  }
-  if (!/^PC-\d{4}-\d{2}$/.test(codigoEquipo)) {
-    mostrarMensaje("El código del equipo debe tener el formato PC-YYYY-NN (ej: PC-2025-01).");
     return;
   }
   if (!condiciones) {
     mostrarMensaje("Debes aceptar las condiciones de uso.");
     return;
   }
-  if (!firma) {
-    mostrarMensaje("Debes ingresar tu firma digital.");
-    return;
-  }
-  mostrarMensaje("Solicitud enviada con éxito.", "success");
-  form.reset();
+ 
+ if (firma.trim() !== idEstudiante.value) {
+  mostrarMensaje("La firma debe coincidir con tu ID de usuario.");
+  return;
+
+}
+
+    
   const solicitud={
       idEstudiante: localStorage.getItem("currentUser"),
       sede:sede,
       fechaSalida: fechaSalida.toISOString(), 
       fechaRegreso: fechaRegreso.toISOString(), 
-      codigoEquipo:codigoEquipo,
+      codigoEquipo:localStorage.getItem("codigoEquipo"),
       firma: firma
   }
   const peticion = await postData(solicitud,"solicitudes")
+  const asignarPc = await patchData({"pcAsignada": localStorage.getItem("codigoEquipo")},"usuarios",localStorage.getItem("idEstudiante"))
   console.log(peticion)
+  console.log(asignarPc);
+  window.location.href = "../pages/perfil.html";
 });
 /* términos y condiciones-mostrar/ocultar */
 const btnTerminos = document.getElementById("toggleTerminos");

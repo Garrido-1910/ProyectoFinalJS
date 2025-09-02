@@ -1,85 +1,23 @@
 {
   "usuarios": [
     {
-      "id": "b302",
-      "nombre": "a",
-      "correo": "b@gmail.com",
-      "usuario": "c",
-      "password": "123456",
-      "telefono": "f",
-      "tipoUsuario": "profesor"
-    },
-    {
-      "id": "d427",
-      "nombre": "Christopher Alberto Garrido",
+      "id": "92ec",
+      "nombre": "Christopher Alberto Garrido Sanchéz",
       "correo": "c.garridofwd19@gmail.com",
-      "usuario": "pepe",
-      "password": "dasda",
-      "telefono": "123456",
-      "tipoUsuario": "estudiante",
-      "token": ""
-    },
-    {
-      "nombre": "pedro",
-      "correo": "pedro@gmail.com",
-      "usuario": "pedro",
+      "usuario": "CAGS",
       "password": "123456789",
-      "telefono": "123456",
-      "tipoUsuario": "estudiante",
-      "id": "6790"
+      "telefono": "62605011",
+      "tipoUsuario": "estudiante"
     },
     {
-      "id": "31a1",
-      "nombre": "Pepe Antonio",
-      "correo": "pepe@gmail.net",
-      "usuario": "PA",
-      "password": "123456",
-      "telefono": "911",
-      "tipoUsuario": "estudiante"
+      "id": "2754",
+      "nombre": "Josué David Munguía Calero",
+      "correo": "josue.munguia1607fwd@gmail.com",
+      "usuario": "JDMC",
+      "password": "123456789",
+      "telefono": "63373983",
+      "tipoUsuario": "profesor"
     }
   ],
-  "solicitudes": [
-    {
-      "id": "2a3b",
-      "idEstudiante": "12345",
-      "sede": "San José",
-      "fechaSalida": "2025-08-28T00:00:00.000Z",
-      "fechaRegreso": "2025-08-29T00:00:00.000Z",
-      "codigoEquipo": "PC-2025-03",
-      "firma": true,
-      "devuelta": true,
-      "estado": "pendiente"
-    },
-    {
-      "id": "2cdf",
-      "idEstudiante": "12345",
-      "sede": "Puntarenas",
-      "fechaSalida": "2025-08-12T00:00:00.000Z",
-      "fechaRegreso": "2025-08-28T00:00:00.000Z",
-      "codigoEquipo": "PC-2025-01",
-      "firma": "11",
-      "devuelta": true,
-      "estado": "devuelta"
-    },
-    {
-      "id": "f01b",
-      "idEstudiante": "12345",
-      "sede": "San José",
-      "fechaSalida": "2025-08-13T00:00:00.000Z",
-      "fechaRegreso": "2025-08-28T00:00:00.000Z",
-      "codigoEquipo": "PC-2025-01",
-      "firma": "11",
-      "devuelta": true,
-      "estado": "devuelta"
-    },
-    {
-      "id": "2fbc",
-      "idEstudiante": "PA",
-      "sede": "San José",
-      "fechaSalida": "2025-09-01T00:00:00.000Z",
-      "fechaRegreso": "2025-09-01T00:00:00.000Z",
-      "codigoEquipo": "PC-2025-03",
-      "firma": "a"
-    }
-  ]
+  "solicitudes": []
 }

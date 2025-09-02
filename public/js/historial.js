@@ -1,4 +1,4 @@
-import { getData, patchData } from "../services/fetch.js";
+import { deleteData, getData, patchData } from "../services/fetch.js";
 
 const resultado = document.getElementById("resultado");
 const filtronombre = document.getElementById("filtronombre");
@@ -38,16 +38,13 @@ async function mostrarSolicitudes() {
    ${s.estado || "pendiente"}
     `;
     const btnDevolver = document.createElement("button")
-    btnDevolver.textContent = "Devolver"
+    btnDevolver.textContent = "Eliminar"
     resultado.appendChild(div);
     resultado.appendChild(btnDevolver)
 
     btnDevolver.addEventListener("click",async function() {
-        const solicitudActualizada = {
-          devuelta: true,
-          estado: "devuelta"
-        }
-        await patchData(solicitudActualizada,"solicitudes",s.id)
+        await deleteData("solicitudes",s.id)
+        mostrarSolicitudes()
     })
   });
 }
