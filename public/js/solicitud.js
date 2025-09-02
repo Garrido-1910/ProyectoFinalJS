@@ -135,3 +135,6 @@ btnTerminos.addEventListener("click", () => {
     window.location.href = "../pages/iniciosecion.html";
   }
   document.getElementById("btnCerrarSesion").addEventListener("click", cerrarSesion);
+
+
+  holi
