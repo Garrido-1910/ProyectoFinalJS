@@ -137,4 +137,4 @@ btnTerminos.addEventListener("click", () => {
   document.getElementById("btnCerrarSesion").addEventListener("click", cerrarSesion);
 
 
-  holi
+  
