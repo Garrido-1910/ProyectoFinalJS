@@ -111,19 +111,6 @@ button:active {
   line-height: 1.6;
 }
 
-
-.bannerfwd {
-position: fixed;
-  width: 100%;
-  max-width: 700px;
-  height: 260px;
-  bottom: 350px;
-  background-image: url('../img/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 16px;
-}
-
 .logo {
   position: fixed;
   bottom: 24px;

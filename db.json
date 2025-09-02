@@ -7,7 +7,8 @@
       "usuario": "CAGS",
       "password": "123456789",
       "telefono": "62605011",
-      "tipoUsuario": "estudiante"
+      "tipoUsuario": "estudiante",
+      "token": "54ER8TLK"
     },
     {
       "id": "2754",
@@ -19,5 +20,15 @@
       "tipoUsuario": "profesor"
     }
   ],
-  "solicitudes": []
+  "solicitudes": [
+    {
+      "id": "9da1",
+      "idEstudiante": "CAGS",
+      "sede": "San José",
+      "fechaSalida": "2025-09-28T00:00:00.000Z",
+      "fechaRegreso": "2025-09-28T00:00:00.000Z",
+      "codigoEquipo": "PC-2025-C A G S-329",
+      "firma": "C A G S"
+    }
+  ]
 }
