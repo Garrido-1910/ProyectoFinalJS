@@ -48,7 +48,7 @@
       "codigoEquipo": "PC-2025-03",
       "firma": true,
       "devuelta": true,
-      "estado": "pendiente"
+      "estado": "devuelta"
     },
     {
       "id": "2cdf",
@@ -79,7 +79,9 @@
       "fechaSalida": "2025-09-01T00:00:00.000Z",
       "fechaRegreso": "2025-09-01T00:00:00.000Z",
       "codigoEquipo": "PC-2025-03",
-      "firma": "a"
+      "firma": "a",
+      "estado": "devuelta",
+      "devuelta": true
     }
   ]
 }
