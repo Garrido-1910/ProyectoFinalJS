@@ -6,6 +6,10 @@ window.addEventListener("DOMContentLoaded", () => {
   // Foto de perfil
   const fotoPerfil = localStorage.getItem("fotoPerfil");
   const imgPerfil = document.getElementById("fotoPerfilSolicitud");
+  const bienvenido = document.getElementById("bienvenido");
+  const primerNombre = localStorage.getItem("nombreCompleto").split(" ")
+  console.log(primerNombre);
+  bienvenido.textContent = `Bienvenido, ${primerNombre[0]}`;
   if (imgPerfil && fotoPerfil) {
     imgPerfil.src = fotoPerfil;
   } else if (imgPerfil) {

@@ -1,9 +1,34 @@
 
 
-import { getData } from "../services/fetch.js";
+import { getData, patchData } from "../services/fetch.js";
 
 
 const contenedor = document.getElementById("listaSolicitudes");
+
+
+async function cargarSelect() {
+  const listaUsuarios = document.getElementById("listaUsuarios");
+  const usuarios = await getData("usuarios");
+
+  usuarios.forEach((usuario)=>{
+     const option = document.createElement("option");
+     option.value = usuario.id;
+     option.textContent = usuario.correo
+
+     listaUsuarios.appendChild(option)
+
+    })
+    listaUsuarios.addEventListener("change",function(e){
+      localStorage.setItem("idAdminNuevo",e.target.value)
+    })
+    const btnAsignar = document.getElementById("btnAsignar");
+    btnAsignar.addEventListener("click",async function() {
+        const cambioAdmin = await patchData({"tipoUsuario":"profesor"},"usuarios",localStorage.getItem("idAdminNuevo"))
+         
+    })
+}
+cargarSelect()
+
 
 async function patchSolicitud(id, nuevoEstado) {
   await fetch(`http://localhost:3001/solicitudes/${id}`, {
