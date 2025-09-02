@@ -112,3 +112,15 @@ async function mostrarSolicitudes() {
 }
 
 mostrarSolicitudes();
+
+    function cerrarSesion() {
+    // Borra datos de sesión relevantes
+    localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('nombre');
+    localStorage.removeItem('fotoPerfil');
+    localStorage.removeItem('codigoEquipo');
+    // Redirige al login
+    window.location.href = "../pages/iniciosecion.html";
+  }
+  document.getElementById("btnCerrarSesion").addEventListener("click", cerrarSesion);

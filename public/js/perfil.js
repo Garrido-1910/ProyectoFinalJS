@@ -134,3 +134,4 @@ async function cargarHistorialUsuario() {
     html += `</tbody></table>`;
     resultado.innerHTML = html;
 }
+

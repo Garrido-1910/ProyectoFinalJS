@@ -147,4 +147,32 @@ button:hover {
   border-radius: 50%;
   }
 
-  
+.logo1 {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 70px;
+  height: 70px;
+  z-index: 100;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(45,123,229,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.logo1 img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(45,123,229,0.10);
+}
+
+.logo1:hover,
+.logo1:focus {
+  box-shadow: 0 8px 24px rgba(45,123,229,0.22);
+  transform: scale(1.05);
+} 
