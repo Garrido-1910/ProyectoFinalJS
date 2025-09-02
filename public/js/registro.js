@@ -1,4 +1,3 @@
-
 import { postData } from "../services/fetch.js";
 
 const nombre = document.getElementById("nombre");
