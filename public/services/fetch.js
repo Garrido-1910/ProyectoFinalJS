@@ -16,7 +16,7 @@ async function postData(obj,endpoint) {
 }
 async function getData(endpoint) {
   try {
-    const peticion = await fetch(`http://localhost:3001/${endpoint}`);
+    const peticion = await fetch(`http://localhost:3000/${endpoint}`);
     const respuesta = await peticion.json();
     console.log(respuesta);
     return respuesta;
@@ -27,7 +27,7 @@ async function getData(endpoint) {
 }
 async function patchData(obj,endpoint,id) {
   try {
-      const peticion = await fetch(`http://localhost:3001/${endpoint}/${id}`,{
+      const peticion = await fetch(`http://localhost:3000/${endpoint}/${id}`,{
           method: 'PATCH',
           headers:{
               'Content-Type': 'application/json'
